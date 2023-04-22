@@ -1,0 +1,22 @@
+{
+  "name": "blxscraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brplcc/blxscrape.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brplcc/blxscrape/issues"
+  },
+  "homepage": "https://github.com/brplcc/blxscrape#readme",
+  "dependencies": {
+    "puppeteer": "^19.10.1"
+  }
+}
