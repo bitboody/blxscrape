@@ -7,3 +7,4 @@ Roblox scraper with Puppeteer js
 - [ ] Save new fetched data
 - [ ] Stay logged into account to avoid captcha
 - [ ] Go headless undetected
+- [ ] Switch to Typescript
