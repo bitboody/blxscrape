@@ -6,3 +6,4 @@ Roblox scraper with Puppeteer js
 - [ ] Fetch user description
 - [ ] Save new fetched data
 - [ ] Stay logged into account to avoid captcha
+- [ ] Go headless undetected
