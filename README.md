@@ -1,6 +1,13 @@
 # blxscrape
 Roblox scraper with Puppeteer js
 
+### Get started:
+
+```bash 
+npm install
+npm run build
+```
+
 ### Roadmap:
 
 - [X] Migrate to Typescript
