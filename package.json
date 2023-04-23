@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/brplcc/blxscrape#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "puppeteer": "^19.10.1"
   }
 }
