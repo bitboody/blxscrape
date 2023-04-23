@@ -8,3 +8,4 @@ Roblox scraper with Puppeteer js
 - [ ] Stay logged into account to avoid captcha
 - [ ] Go headless undetected
 - [ ] Switch to Typescript
+- [ ] Add user input
