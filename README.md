@@ -14,5 +14,5 @@ npm run build
 - [X] Fetch user description
 - [X] Add dotenv file
 - [X] Avoid captcha by staying logged in
-- [ ] Get URL from user input
+- [X] Get URL from user input
 - [ ] Save to JSON file
