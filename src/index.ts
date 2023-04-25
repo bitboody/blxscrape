@@ -1,11 +1,20 @@
 const puppeteer = require('puppeteer');
 const path = require('path');
-const fs = require('fs');
 require('dotenv').config({ path: '../config/.env' });
 
 async function scrape(url?: string, username?: string, password?: string) {
-  const browser = await puppeteer.launch({headless:false});
+
+  const browser = await puppeteer.launch({ headless: true });
   const page = await browser.newPage();
+
+  await page.evaluateOnNewDocument(() => {
+    Object.defineProperty(navigator, 'platform', { get: () => 'Win32' })
+    Object.defineProperty(navigator, 'productSub', { get: () => '20100101' })
+    Object.defineProperty(navigator, 'vendor', { get: () => '' })
+    Object.defineProperty(navigator, 'oscpu', { get: () => 'Windows NT 10.0; Win64; x64' })
+  });
+
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73:0) Gecko/20100101 Firefox/73.0');
 
   await page.goto('https://roblox.com/login', { waitUntil: 'networkidle0' });
   await page.type('#login-username', username);
@@ -14,7 +23,7 @@ async function scrape(url?: string, username?: string, password?: string) {
   await Promise.all([
     console.log(`Logging into ${process.env.USER}...`),
     page.click('#login-button'),
-    page.waitForNavigation({ waitUntil: 'networkidle0' }),
+    page.waitForNavigation({ waitUntil: 'networkidle0' })
   ]);
   console.log('Logged in!')
 
@@ -37,7 +46,7 @@ async function scrape(url?: string, username?: string, password?: string) {
   const src: any = await el3.getProperty('src');
   const pfpUrl: string = await src.jsonValue();
 
-  const data = {usernameTxt, descTxt, pfpUrl};
+  const data: object = {usernameTxt, descTxt, pfpUrl};
 
   console.log(data);
 
