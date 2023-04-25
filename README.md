@@ -13,6 +13,6 @@ npm run build
 - [X] Migrate to Typescript
 - [X] Fetch user description
 - [X] Add dotenv file
-- [ ] Avoid captcha
+- [X] Avoid captcha by staying logged in
 - [ ] Get URL from user input
 - [ ] Save to JSON file
