@@ -7,7 +7,7 @@ require('dotenv').config({ path: '../config/.env' });
 async function scrape(url?: string, username?: string, password?: string) {
 
   const browser = await puppeteer.use(StealthPlugin(), AnonimizeUa())
-    .launch({ headless: true, userDataDir: "./user_data" });
+    .launch({ headless: false, userDataDir: "./user_data" });
   const page = await browser.newPage();
   
   await page.goto('https://www.roblox.com');
