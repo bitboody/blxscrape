@@ -1,5 +1,5 @@
 # blxscrape
-Roblox scraper with Puppeteer js
+Roblox profile scraper with Puppeteer js
 
 ### Get started:
 
