@@ -8,7 +8,6 @@ export async function scrape(url?: string, username?: string, password?: string)
   const browser = await puppeteer.use(StealthPlugin(), AnonimizeUa())
     .launch({ headless: false, userDataDir: "./user_data" });
   const page = await browser.newPage();
-  
   await page.goto('https://www.roblox.com');
 
   if (await page.evaluate(() => document.location.href) !== "https://www.roblox.com/home") {
@@ -22,14 +21,13 @@ export async function scrape(url?: string, username?: string, password?: string)
       page.click('#login-button'),
       page.waitForNavigation({ waitUntil: 'networkidle0' })
     ]);
-    console.log('Logged in!');
   }
+  console.log('Logged in!');
 
   await page.goto(url);
 
   // username 
   console.log('Fetching username...');
-  await page.waitForSelector('.profile-display-name');
   const [el]: any = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
   let txt: any = await el.getProperty('textContent');
   const usernameTxt: string = await txt.jsonValue();
@@ -37,7 +35,12 @@ export async function scrape(url?: string, username?: string, password?: string)
   // desc
   console.log('Fetching description...');
   const [el2]: any = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div[2]/div/pre/span');
-  const descTxt: string = await page.evaluate((el2: any) => el2.textContent, el2);
+  let descTxt: string;
+  if (el2 === undefined) {
+    descTxt = '';
+  } else {
+    descTxt = await page.evaluate((el2: any) => el2.textContent, el2);
+  }
 
   // profile picture 
   console.log('Fetching profile picture...');
@@ -51,5 +54,3 @@ export async function scrape(url?: string, username?: string, password?: string)
 
   browser.close();
 }
-
-// scrape('https://www.roblox.com/users/64004875/profile', process.env.USER, process.env.PASS);
