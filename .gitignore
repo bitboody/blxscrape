@@ -3,3 +3,4 @@ config/.env
 dist
 user_data
 src/user_data
+json/data.json
