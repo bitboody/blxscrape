@@ -16,7 +16,7 @@ use the example files included for reference.
 ---------------
 ### Why?
 
-This project is intended to be a part of a backend server used for verification and authentication of a user's ownership to the Roblox account.
+This project is intended to be a part of a backend server used for verification and authentication of a user's ownership to his Roblox account.
 
 ---------------
 ### Roadmap:
