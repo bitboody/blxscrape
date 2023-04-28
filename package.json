@@ -29,6 +29,7 @@
   "devDependencies": {
     "@types/express": "^4.17.17",
     "@types/node": "^18.16.0",
+    "@types/prompt-sync": "^4.2.0",
     "typescript": "^5.0.4"
   }
 }

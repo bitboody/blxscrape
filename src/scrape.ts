@@ -1,20 +1,21 @@
-const puppeteer = require('puppeteer-extra');
-const stealthPlugin = require('puppeteer-extra-plugin-stealth');
-const anonimizeUa = require('puppeteer-extra-plugin-anonymize-ua');
-const path = require('path');
-const fs = require('fs/promises');
-require('dotenv').config({ path: '../config/.env' });
+import puppeteer from 'puppeteer-extra';
+import stealthPlugin from 'puppeteer-extra-plugin-stealth';
+import anonimizeUa from 'puppeteer-extra-plugin-anonymize-ua';
+import path from 'path';
+import fs from 'fs/promises';
+import dotenv from 'dotenv';
+dotenv.config({ path: '../config/.env' });
 
 export async function scrape(url?: string, user?: string, password?: string) {
   const jsonFile = await fs.readFile('../json/data.json');
-  const jsonText = await JSON.parse(jsonFile);
+  const jsonText = await JSON.parse(jsonFile.toString());
 
-  if (jsonFile.includes(url) === true) {
+  if (jsonFile.includes(url!) === true) {
     console.log('User already exists');
     return 0;
   }
 
-  const browser = await puppeteer.use(stealthPlugin(), anonimizeUa())
+  const browser = await puppeteer.use(anonimizeUa())
     .launch({ headless: false, userDataDir: "../config/user_data" });
   const page = await browser.newPage();
 
@@ -23,8 +24,8 @@ export async function scrape(url?: string, user?: string, password?: string) {
   if (await page.evaluate(() => document.location.href) !== "https://www.roblox.com/home") {
     console.log('Account logged out, logging in...');
     await page.goto('https://roblox.com/login', { waitUntil: 'networkidle0' });
-    await page.type('#login-username', user);
-    await page.type('#login-password', password);
+    await page.type('#login-username', user!);
+    await page.type('#login-password', password!);
 
     await Promise.all([
       console.log(`Logging into ${process.env.USER}...`),
@@ -34,22 +35,22 @@ export async function scrape(url?: string, user?: string, password?: string) {
   }
   console.log('Logged in!');
 
-  await page.goto(url);
+  await page.goto(url!);
 
   // URL
   console.log('Fetching URL...');
-  let userUrl: any = await page.evaluate(() => document.location.href);  
+  let userUrl = await page.evaluate(() => document.location.href);  
 
   // username 
   console.log('Fetching username...');
-  const [el1]: any = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
-  let txt: any = await el1.getProperty('textContent');
-  let username: JSON = await txt.jsonValue();
+  const [el1] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
+  let txt = await el1.getProperty('textContent');
+  let username = await txt.jsonValue();
 
   // desc
   console.log('Fetching description...');
-  const [el2]: any = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div[2]/div/pre/span');
-  let desc: string;
+  const [el2] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div[2]/div/pre/span');
+  let desc;
   if (el2 === undefined) {
     desc = '';
   } else {
@@ -58,11 +59,11 @@ export async function scrape(url?: string, user?: string, password?: string) {
 
   // profile picture 
   console.log('Fetching profile picture...');
-  const [el3]: any = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[1]/span/thumbnail-2d/span/img');
-  const src: any = await el3.getProperty('src');
-  const pfpUrl: JSON = await src.jsonValue();
+  const [el3] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[1]/span/thumbnail-2d/span/img');
+  const src = await el3.getProperty('src');
+  const pfpUrl = await src.jsonValue();
 
-  const data: object = {userUrl, username, desc, pfpUrl};
+  const data = {userUrl, username, desc, pfpUrl};
 
   if (Array.isArray(jsonText)) jsonText.push(data);
 

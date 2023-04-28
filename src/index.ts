@@ -1,6 +1,7 @@
 import { scrape } from './scrape';
-const prompt = require('prompt-sync')();
+import prompt from 'prompt-sync';
+const input = prompt();
 
-const url: string = prompt('URL of profile: ');
+const url: string = input('URL of profile: ');
 
 scrape(url, process.env.USER, process.env.PASS);
