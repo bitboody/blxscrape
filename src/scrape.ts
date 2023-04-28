@@ -3,7 +3,7 @@ import anonimizeUa from 'puppeteer-extra-plugin-anonymize-ua';
 import path from 'path';
 import fs from 'fs/promises';
 
-export async function scrape(url: string, user: string, password: string) {
+async function scrape(url: string, user: string, password: string) {
   const jsonFile = await fs.readFile('../json/data.json');
   const jsonText = await JSON.parse(jsonFile.toString());
 
@@ -70,3 +70,5 @@ export async function scrape(url: string, user: string, password: string) {
 
   browser.close();
 }
+
+export default scrape;

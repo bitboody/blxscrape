@@ -1,4 +1,4 @@
-import { scrape } from './scrape';
+import scrape from './scrape';
 import prompt from 'prompt-sync';
 import dotenv from 'dotenv';
 dotenv.config({ path: '../config/.env' });
