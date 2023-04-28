@@ -2,10 +2,8 @@ import puppeteer from 'puppeteer-extra';
 import anonimizeUa from 'puppeteer-extra-plugin-anonymize-ua';
 import path from 'path';
 import fs from 'fs/promises';
-import dotenv from 'dotenv';
-dotenv.config({ path: '../config/.env' });
 
-export async function scrape(url?: string, user?: string, password?: string) {
+export async function scrape(url: string, user: string, password: string) {
   const jsonFile = await fs.readFile('../json/data.json');
   const jsonText = await JSON.parse(jsonFile.toString());
 
@@ -42,8 +40,8 @@ export async function scrape(url?: string, user?: string, password?: string) {
 
   // username 
   console.log('Fetching username...');
-  const [el1] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
-  let txt = await el1.getProperty('textContent');
+  let [el1] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
+  let txt = await el1.getProperty('innerText');
   let username = await txt.jsonValue();
 
   // desc
@@ -53,7 +51,7 @@ export async function scrape(url?: string, user?: string, password?: string) {
   if (el2 === undefined) {
     desc = '';
   } else {
-    desc = await page.evaluate((el2: any) => el2.textContent, el2);
+    desc = await page.evaluate(el2 => el2.textContent, el2);
   }
 
   // profile picture 
