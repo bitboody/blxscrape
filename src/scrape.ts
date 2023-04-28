@@ -1,5 +1,4 @@
 import puppeteer from 'puppeteer-extra';
-import stealthPlugin from 'puppeteer-extra-plugin-stealth';
 import anonimizeUa from 'puppeteer-extra-plugin-anonymize-ua';
 import path from 'path';
 import fs from 'fs/promises';
