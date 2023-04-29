@@ -78,7 +78,7 @@ async function scrape(url: string, user: string, password: string) {
 
   console.log(data);
 
-  await fs.writeFile('../json/data.json', `${JSON.stringify(jsonText, null, 4)}`);
+  await fs.writeFile('../json/data.json', JSON.stringify(jsonText, null, 4));
 
   browser.close();
 }
