@@ -14,7 +14,7 @@ else if (!url.includes('roblox.com' && 'users' && 'profile')) {
   console.log('Error: Invalid URL. Please enter a valid Roblox user URL.');
 } 
 
-else if (process.env.USER === 'undefined' || process.env.PASS === 'undefined') {
+else if (process.env.USER === undefined || process.env.PASS === undefined) {
   console.log('Error: .env is empty. Please provide a username and a password.');
 }
 
