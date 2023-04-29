@@ -13,21 +13,28 @@ async function scrape(url: string, user: string, password: string) {
   }
 
   const browser = await puppeteer.use(anonimizeUa())
-    .launch({ headless: false, userDataDir: "../config/user_data" });
+    .launch({
+      headless: false,
+      userDataDir: "../config/user_data"
+    });
   const page = await browser.newPage();
 
   await page.goto('https://www.roblox.com');
 
   if (await page.evaluate(() => document.location.href) !== "https://www.roblox.com/home") {
     console.log('Account logged out, logging in...');
-    await page.goto('https://roblox.com/login', { waitUntil: 'networkidle0' });
+    await page.goto('https://roblox.com/login', {
+      waitUntil: 'networkidle0'
+    });
     await page.type('#login-username', user!);
     await page.type('#login-password', password!);
 
     await Promise.all([
       console.log(`Logging into ${process.env.USER}...`),
       page.click('#login-button'),
-      page.waitForNavigation({ waitUntil: 'networkidle0' })
+      page.waitForNavigation({
+        waitUntil: 'networkidle0'
+      })
     ]);
   }
   console.log('Logged in!');
@@ -36,7 +43,7 @@ async function scrape(url: string, user: string, password: string) {
 
   // URL
   console.log('Fetching URL...');
-  let userUrl = await page.evaluate(() => document.location.href);  
+  let userUrl = await page.evaluate(() => document.location.href);
 
   // username 
   console.log('Fetching username...');
@@ -60,12 +67,17 @@ async function scrape(url: string, user: string, password: string) {
   const src = await el3.getProperty('src');
   const pfpUrl = await src.jsonValue();
 
-  const data = {userUrl, username, desc, pfpUrl};
+  const data = {
+    userUrl,
+    username,
+    desc,
+    pfpUrl
+  };
 
   if (Array.isArray(jsonText)) jsonText.push(data);
 
   console.log(data);
-  
+
   await fs.writeFile('../json/data.json', `${JSON.stringify(jsonText, null, 4)}`);
 
   browser.close();
