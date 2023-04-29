@@ -27,5 +27,3 @@ This project is intended to be a part of a backend server used for verification 
 - [X] Avoid captcha by staying logged in
 - [X] Get URL from user input
 - [X] Save to JSON file
-- [ ] Handle empty JSON files
-- [ ] Work in headless mode (may be undoable)
