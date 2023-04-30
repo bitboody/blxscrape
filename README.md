@@ -6,7 +6,14 @@ Roblox user profile scraper with Puppeteer js
 <img src="https://img.shields.io/github/last-commit/brplcc/blxscrape">
 ## Get started:
 
+### Prerequisites:
+- Node JS
+- NPM
+- TSC (Typescript compiler)
+
 ```bash 
+git clone https://github.com/brplcc/blxscrape.git
+cd blxscrape
 npm install
 npm run build
 ```
