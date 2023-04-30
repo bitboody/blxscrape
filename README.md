@@ -1,4 +1,5 @@
-# Blxscrape
+<div align="center"> 
+<h1>Blxscrape</h1>
 Roblox user profile scraper with Puppeteer
 <br>
 <br>
@@ -6,7 +7,9 @@ Roblox user profile scraper with Puppeteer
 <img src="https://img.shields.io/github/last-commit/brplcc/blxscrape">
 <img src="https://img.shields.io/github/languages/top/brplcc/blxscrape">
 <br>
-## Get started:
+</div>
+
+## Getting started:
 
 ### Prerequisites:
 - Node JS
