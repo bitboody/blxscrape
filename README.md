@@ -4,6 +4,8 @@ Roblox user profile scraper with Puppeteer js
 <br>
 <img src="https://img.shields.io/github/license/brplcc/blxscrape">
 <img src="https://img.shields.io/github/last-commit/brplcc/blxscrape">
+<img src="https://img.shields.io/github/languages/top/brplcc/blxscrape">
+<br>
 ## Get started:
 
 ### Prerequisites:
