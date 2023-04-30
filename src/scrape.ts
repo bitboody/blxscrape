@@ -43,7 +43,7 @@ async function scrape(url: string, user: string, password: string) {
 
   // URL
   console.log('Fetching URL...');
-  let userUrl = await page.evaluate(() => document.location.href);
+  const userUrl = await page.evaluate(() => document.location.href);
 
   // username 
   console.log('Fetching username...');
