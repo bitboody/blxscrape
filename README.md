@@ -12,7 +12,8 @@ Roblox user profile scraper with Puppeteer
 <p align="center">
   <a href="#prerequisites">Prerequisites</a> •
   <a href="#getting-started">Getting started</a> •
-  <a href="#faq">FAQ</a>
+  <a href="#faq">FAQ</a> •
+  <a href="#roadmap">roadmap</a>
 </p>
 
 
