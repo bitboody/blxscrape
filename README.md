@@ -9,12 +9,19 @@ Roblox user profile scraper with Puppeteer
 <br>
 </div>
 
-## Getting started:
+<p align="center">
+  <a href="#prerequisites">Prerequisites</a> •
+  <a href="#getting-started">Getting started</a> •
+  <a href="#faq">FAQ</a>
+</p>
 
-### Prerequisites:
+
+## Prerequisites:
 - Node JS
-- NPM
 - TSC (Typescript compiler)
+
+---------------
+## Getting started:
 
 ```bash 
 git clone https://github.com/brplcc/blxscrape.git
