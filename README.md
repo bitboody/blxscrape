@@ -1,5 +1,5 @@
 # blxscrape
-Roblox profile scraper with Puppeteer js
+Roblox user profile scraper with Puppeteer js
 <br>
 <br>
 <img src="https://img.shields.io/github/license/brplcc/blxscrape">
