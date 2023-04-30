@@ -1,4 +1,4 @@
-# blxscrape
+# Blxscrape
 Roblox user profile scraper with Puppeteer js
 <br>
 <br>
