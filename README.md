@@ -1,4 +1,5 @@
-<div align="center"> 
+<div align="center">
+<img width="160px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Roblox_Logo.svg/1200px-Roblox_Logo.svg.png">
 <h1>Blxscrape</h1>
 Roblox user profile scraper with Puppeteer
 <br>
