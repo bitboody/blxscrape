@@ -10,12 +10,12 @@ Roblox user profile scraper with Puppeteer
 <br>
 </div>
 
-<p align="center">
-  <a href="#prerequisites">Prerequisites</a> •
-  <a href="#getting-started">Getting started</a> •
-  <a href="#faq">FAQ</a> •
-  <a href="#roadmap">roadmap</a>
-</p>
+<div align="center">
+<a href="#prerequisites">Prerequisites</a> •
+<a href="#getting-started">Getting started</a> •
+<a href="#faq">FAQ</a> •
+<a href="#roadmap">roadmap</a>
+</div>
 
 
 ## Prerequisites:
@@ -54,7 +54,7 @@ It uses Puppeteer which is a bot controlled browser that does everything automat
 
 ### Are you open to suggestions/bug reports?
 
-Yes, if you do encounter a problem please report it.
+Yes, if you have any suggestions or if you have encountered any bugs, please do not hesitate to repot them.
 
 ### Is anyone actually asking those questions?
 
