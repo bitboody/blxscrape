@@ -47,11 +47,11 @@ async function scrape(url: string, user: string, password: string) {
 
   // username 
   console.log('Fetching username...');
-  let [el1] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
+  const [el1] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[1]/div/div[2]/div[2]/div[1]/div[2]');
   const txt = await el1.getProperty('innerText');
   const username = await txt.jsonValue();
 
-  // desc
+  // description
   console.log('Fetching description...');
   const [el2] = await page.$x('/html/body/div[3]/main/div[2]/div[2]/div/div[3]/div/div[1]/div[1]/div[2]/div/pre/span');
   let desc;
