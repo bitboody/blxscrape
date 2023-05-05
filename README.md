@@ -1,5 +1,4 @@
 <div align="center">
-<img width="135px" src="https://seeklogo.com/images/R/roblox-logo-1D1B091426-seeklogo.com.png">
 <h1>Blxscrape</h1>
 Roblox user profile scraper with Puppeteer
 <br>
