@@ -81,6 +81,7 @@ async function scrape(url: string, user: string, password: string) {
   if (Array.isArray(jsonText)) {
     jsonText.push(data) 
     await fsp.writeFile('../json/data.json', JSON.stringify(jsonText, null, 4));
+    console.log('Written to data.json successfully');
   } else {
     console.log('Error (failed to write to json): The data.json file has to contain an empty array');
   }
