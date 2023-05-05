@@ -1,10 +1,10 @@
 import puppeteer from 'puppeteer-extra';
 import anonimizeUa from 'puppeteer-extra-plugin-anonymize-ua';
 import path from 'path';
-import fs from 'fs/promises';
+import fsp from 'fs/promises';
 
 async function scrape(url: string, user: string, password: string) {
-  const jsonFile = await fs.readFile('../json/data.json');
+  const jsonFile = await fsp.readFile('../json/data.json');
   const jsonText = await JSON.parse(jsonFile.toString());
 
   if (jsonFile.includes(url!) === true) {
@@ -74,13 +74,16 @@ async function scrape(url: string, user: string, password: string) {
     pfpUrl
   };
 
-  if (Array.isArray(jsonText)) jsonText.push(data);
+  browser.close();
 
   console.log(data);
 
-  await fs.writeFile('../json/data.json', JSON.stringify(jsonText, null, 4));
-
-  browser.close();
+  if (Array.isArray(jsonText)) {
+    jsonText.push(data) 
+    await fsp.writeFile('../json/data.json', JSON.stringify(jsonText, null, 4));
+  } else {
+    console.log('Error (failed to write to json): The data.json file has to contain an empty array');
+  }
 }
 
 export default scrape;
