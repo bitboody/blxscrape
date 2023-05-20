@@ -53,7 +53,7 @@ It uses Puppeteer which is a bot controlled browser that does everything automat
 
 ### Are you open to suggestions/bug reports?
 
-Yes, if you have any suggestions or if you have encountered any bugs, please do not hesitate to repot them.
+Yes, if you have any suggestions or if you encountered any bugs, please do not hesitate to repot them.
 
 ### Is anyone actually asking those questions?
 
