@@ -39,19 +39,19 @@ use the example files included for reference.
 ---------------
 ## FAQ:
 
-### Why?
+#### Why?
 
 This project was intended to be a part of a backend server used for verification and authentication of a user's ownership to his Roblox account.
 
-### Why not just use the Roblox API?
+#### Why not just use the Roblox API?
 
 That would be probably the better choice since it would be a lot more efficient. But the problem here is that if you wanted to operate properly using the Roblox API, which could be a hassle since you will need to rent a VPS. That's where Blxscrape comes into play.
 
-## How does it work?
+#### How does it work?
 
 It uses Puppeteer which is a bot controlled browser that does everything automatically. It logs into Roblox using the credentials you provide in the .env file. Then it goes to the URL of the user's profile that you've provided, and then it will fetch the username, description and the user's profile picture URL, if the user does not already exist, it will save the data to a JSON file.
 
-### Are you open to suggestions/bug reports?
+#### Are you open to suggestions/bug reports?
 
 Yes, if you have any suggestions or if you encountered any bugs, please do not hesitate to repot them.
 
