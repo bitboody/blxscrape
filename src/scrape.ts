@@ -15,7 +15,7 @@ async function scrape(url: string, user: string, password: string) {
   const browser = await puppeteer.use(anonimizeUa())
     .launch({
       headless: false,
-      userDataDir: "../config/user_data"
+      userDataDir: '../config/user_data'
     });
   const page = await browser.newPage();
 
@@ -39,7 +39,7 @@ async function scrape(url: string, user: string, password: string) {
   }
   console.log('Logged in!');
 
-  await page.goto(url!);
+	await page.goto(url!);
 
   // URL
   console.log('Fetching URL...');
