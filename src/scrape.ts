@@ -39,7 +39,7 @@ async function scrape(url: string, user: string, password: string) {
   }
   console.log('Logged in!');
 
-	await page.goto(url!);
+  await page.goto(url!);
 
   // URL
   console.log('Fetching URL...');
