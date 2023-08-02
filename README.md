@@ -51,14 +51,6 @@ That would be probably the better choice since it would be a lot more efficient.
 
 It uses Puppeteer which is a bot controlled browser that does everything automatically. It logs into Roblox using the credentials you provide in the .env file. Then it goes to the URL of the user's profile that you've provided, and then it will fetch the username, description and the user's profile picture URL, if the user does not already exist, it will save the data to a JSON file.
 
-#### Are you open to suggestions/bug reports?
-
-Yes, if you have any suggestions or if you've encountered any bugs, please do not hesitate to repot them.
-
-### Is anyone actually asking those questions?
-
-No. At least not yet lol.
-
 ---------------
 ### Roadmap:
 
