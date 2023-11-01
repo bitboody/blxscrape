@@ -18,7 +18,7 @@ Roblox user profile scraper with Puppeteer
 
 
 ## Prerequisites:
-- <a href="https://nodejs.org/en/download">Node</a>
+- <a href="https://nodejs.org/en/download">Node.js</a>
 - <a href="https://www.npmjs.com/package/typescript">Typescript</a>
 
 ---------------
